@@ -1,6 +1,5 @@
 package maze;
 
-
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -10,7 +9,7 @@ public class Cell {
   private boolean visited;
   private boolean isWall;					// true if this cell i a wall.
   private Cell[] twoStepNeighbours;			// North, East, South, West. Som en klocka!
-  private Cell[] oneStepNeighbours;
+  private Cell[] oneStepNeighbours;			// North, East, South, West. Som en klocka!
 
   public Cell(int row, int col, boolean isWall, boolean isVisited){
     this.row = row;
@@ -67,6 +66,16 @@ public class Cell {
 
   public Cell[] getOneStepNeighboursArray() {
     return oneStepNeighbours;
+  }
+
+  public ArrayList<Cell> getOneStepNeighbours(){
+    ArrayList<Cell> result = new ArrayList<Cell>();
+    for (int i = 0; i < 4; i++) {
+      if ( oneStepNeighbours[i] != null ){
+        result.add(oneStepNeighbours[i]);
+      }
+    }
+    return result;
   }
 
   public void setOneStepNeighbour(int x, Cell c) {

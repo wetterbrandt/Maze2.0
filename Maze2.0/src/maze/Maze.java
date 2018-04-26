@@ -251,13 +251,13 @@ public class Maze {
 	public static void main(String[] args) throws IOException {
 		//Maze myMaze = new Maze("resources/Maze2.txt");
 		Maze myMaze = new Maze(7);
-		TurnLeft tl = new TurnLeft();
+		BreadthFirstSearch BFS = new BreadthFirstSearch();
 
 		myMaze.print();
 
-		tl.solve(myMaze);
+		BFS.solve(myMaze);
 
-		System.out.println(tl);
+		System.out.println(BFS);
 	}
 
 }
